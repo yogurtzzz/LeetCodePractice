@@ -45,28 +45,17 @@ package leetcode.editor.cn;
 // 👍 480 👎 0
 
 import java.util.Arrays;
-import java.util.List;
+
+import static leetcode.util.Utils.create2dArray;
 
 public class _63_UniquePathsIi {
     public static void main(String[] args) {
         Solution solution = (new _63_UniquePathsIi()).new Solution();
-        int[][] obstacleGrid = create(Arrays.asList(new int[]{0,0}, new int[]{1,1}, new int[]{0,0}));
+        int[][] obstacleGrid = create2dArray(Arrays.asList(new int[]{0,0}, new int[]{1,1}, new int[]{0,0}));
         int i = solution.uniquePathsWithObstacles(obstacleGrid);
         System.out.println(i);
     }
 
-    private static int[][] create(List<int[]> list) {
-        int m = list.size();
-        int n = list.get(0).length;
-        int[][] arr = new int[m][n];
-        for (int i = 0; i < m; i++) {
-            int[] item = list.get(i);
-            for (int j = 0; j < n; j++) {
-                arr[i][j] = item[j];
-            }
-        }
-        return arr;
-    }
     
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
